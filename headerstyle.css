@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color:#F4F7F6;
+}
+
+/*Cabeçalho da pagina (Header)*/
+.containerHeader{
+    background-color:#00A896; 
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.logoHeader {
+    width: 300px;
+}
+
+/*Conteudo da pagina (Main)*/
+.containerMain{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-variant: initial;
+    gap: 30px;
+    text-align: center;
+}
+
+
+
