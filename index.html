@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="headerstyle.css">
+    <!--Arquivos CSS-->  
+    <link rel="stylesheet" href="css/headerstyle.css">
+    <link rel="stylesheet" href="css/ai_assistent_style.css">
+    <!--icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     <title>VacinaMais</title>
 </head>
 <body>
@@ -47,6 +52,37 @@
 
 
     </main>
+    <!--Assistente de AI-->
+    <section class="ai-assist">
+        <button id="on-ai" value="1" onclick="aiContainer()">
+            <span class="material-symbols-outlined">robot_2</span>
+        </button> 
+        <section class="container-ai">
+            <div class="header-ai" >
+                <div class="perfil-ai">
+                    <div class="avatar-ai">
+                        <img src="image/robo.jpg" alt="Avatar da IA">
+                    </div>
+                    <div class="info-ai">
+                        <h4>Assistente VacinaMais</h4>
+                        <span class="status-online">
+                            <span class="bolinha-verde"></span> Online
+                        </span>
+                    </div>
+                </div>
+                <button id="off-ai" onclick="aiContainer()">
+                    <span class="material-symbols-outlined">close_small</span>
+                </button>
+            </div>
+            <div class="content-ai"></div>
+            <div class="send-text-ai">
+                <textarea name="" id=""></textarea>
+                <button class=""><span class="material-symbols-outlined">send</span></button>
+            </div>
+        </section>
+    </section>
 
+    <!--Arquivos Javascript-->
+    <script src="script/ai-button.js"></script>
 </body>
 </html>
