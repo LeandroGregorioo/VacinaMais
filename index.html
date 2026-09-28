@@ -21,35 +21,37 @@
     <!--Conteudo-->
     <main class="containerMain">
 
-        <section>
-            <h1>Bem-Vindo João!</h1>
-            <p1>A sua carteira de vacinação</p1>
-        </section>
-        
-        <section class="minhasVacinas">
-            <h2>Minha Carteira</h2>
-            <div id="listadeVacinas"></div>
-        </section>
-        <!--Usuario poderar a-->
-        <section class="adicionar-vacina">
-        <h2>Registrar Nova Vacina</h2>
+        <!-- COLUNA DA ESQUERDA (Bem-vindo + Formulário) -->
+        <div class="coluna-esquerda">
+            
+            <section class="userInfo">
+                <h1>Bem-Vindo João!</h1>
+                <p>A sua carteira de vacinação</p>
+            </section>
+            
+            <section class="adicionar-vacina">
+                <h2>Registrar Nova Vacina</h2>
+                <form>
+                    <input type="text" id="nome-vacina" placeholder="Nome da Vacina (Ex: Tétano)">
+                    <input type="date" id="data-vacina">
+                    <select id="status-vacina">
+                        <option value="Em dia">Em dia</option>
+                        <option value="Atrasada">Atrasada</option>
+                        <option value="Reforço pendente">Reforço pendente</option>
+                    </select>
+                    <button type="button" onclick="adicionarVacina()">Salvar Vacina</button>
+                </form>
+            </section>
 
-        <form>
+        </div>
 
-        <input type="text" id="nome-vacina" placeholder="Nome da Vacina (Ex: Tétano)">
-        <input type="date" id="data-vacina">
-
-        <select id="status-vacina">
-            <option value="Em dia">Em dia</option>
-            <option value="Atrasada">Atrasada</option>
-            <option value="Reforço pendente">Reforço pendente</option>
-        </select>
-        
-        <button type="button" onclick="salvarVacina()">Salvar Vacina</button>
-
-        </form>
-        </section>
-
+        <!-- COLUNA DA DIREITA (Lista de vacinas) -->
+        <div class="coluna-direita">
+            <section class="minhasVacinas">
+                <h2>Minha Carteira</h2>
+                <div id="listadeVacinas"></div>
+            </section>
+        </div>
 
     </main>
     <!--Assistente de AI-->
@@ -83,6 +85,7 @@
     </section>
 
     <!--Arquivos Javascript-->
+    <script src="script/script.js"></script>
     <script src="script/ai-button.js"></script>
 </body>
 </html>
