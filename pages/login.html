@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/VacinaMais/css/loginstyle.css">
+    <link rel="stylesheet" href="../css/loginstyle.css">
     <title>VacinaMais</title>
 </head>
 <body>
 
     <!--Cabeçalho-->
     <header class="containerHeader">
-        <img class="logoHeader" src="image/logo.svg" alt="Logo do sistema VacinaMais">
+        <img class="logoHeader" src="../image/logo.svg" alt="Logo do sistema VacinaMais">
     </header>
     <br>
 
@@ -22,13 +22,13 @@
             <p>Consulte sua carteira de vacinação</p>
             <br>
             <form>
-                <input type="text" id="cpf" placeholder="Insira seu CPF">
+    <input class="cpf" type="text" id="cpf" placeholder="Insira seu CPF" maxlength="14" inputmode="numeric" autocomplete="off">
 
-                <button type="button" onclick="fazerLogin()">Acessar</button>
-            </form>
+    <button type="button" onclick="fazerLogin()">Acessar</button>
+</form>
         </section>
 
     </main>
-    <script src="/VacinaMais/script/script.js"></script>
+     <script src="../script/login.js"></script>
 </body>
 </html>

@@ -39,6 +39,7 @@ body {
 form{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
     margin-top: 20px;
 }
@@ -57,3 +58,20 @@ button{
 button:hover {
     background-color: #008f7f;
 }
+
+.cpf{
+    border-radius: 10%;
+    width: 200px;
+    display: flex; 
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 25px; 
+    outline: none;
+}
+
+.cpf:focus{
+    border-color: #008f7f;    
+    cursor: pointer;
+}
+
