@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color:#F4F7F6;
+}
+
+/*Cabeçalho da pagina (Header)*/
+.containerHeader{
+    background-color:#00A896; 
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.logoHeader {
+    width: 300px;
+}
+
+/*Conteudo da pagina (Main)*/
+.containerLogin {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 80vh;           
+}
+
+.caixaLogin{
+    background-color: rgb(219, 218, 218);
+    padding: 40px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button{
+    background-color: #00A896; 
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/*Animação do botão quando passar o mouse por cima muda de*/
+button:hover {
+    background-color: #008f7f;
+}
+
+.cpf{
+    border-radius: 10%;
+    width: 200px;
+    display: flex; 
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 25px; 
+    outline: none;
+}
+
+.cpf:focus{
+    border-color: #008f7f;    
+    cursor: pointer;
+}
+
