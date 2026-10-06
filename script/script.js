@@ -1,21 +1,9 @@
-// função para logar com uma senha padrão que  direciona para pagina principal
-const fazerLogin = () => {
-    const cpfDigitado = document.getElementById("cpf").value;
-
-    if (cpfDigitado === "00000000000"){
-        window.location.href = "index.html"; //direcionando para a pagina index
-    }
-    else {
-         alert("CPF Inválido");
-    }
-}
 // Nossa lista inicial de vacinas
 const vacinas = [
     { nome: "Covid-19 (1ª Dose)", data: "2021-05-10", status: "Em dia" },
     { nome: "Febre Amarela", data: "2022-08-15", status: "Em dia" },
     { nome: "Tétano", data: "2013-01-20", status: "Atrasada" }
 ];
-
 // Função que desenha as vacinas na tela
 const renderizarVacinas = () => {
     const divLista = document.getElementById("listadeVacinas");
