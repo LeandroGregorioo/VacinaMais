@@ -1,0 +1,75 @@
+
+.carrossel{
+    margin: 0 auto;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+}
+
+
+.slides{
+    width: 300%;
+    height: 450px;
+    display: flex;
+}
+
+.carrossel input{
+    display: none;
+}
+
+.slide{
+    width: calc(100% / 3);
+    transition: margin-left 1s;
+    position: relative;
+}
+
+.img_carrossel{
+    width: 800px;
+}
+
+.navigation{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-btn{
+    border: 2px solid #00A896;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.navigation-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.navigation-btn:hover{
+    background-color: #00A896;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -50%;
+}
+
+#radio1:checked ~ .slides .first{ margin-left: 0; }
+#radio2:checked ~ .slides .first{ margin-left: -33.333%; }
+#radio3:checked ~ .slides .first{ margin-left: -66.666%; }
+
+/* botão ativo com fundo */
+#radio1:checked ~ .navigation label[for="radio1"],
+#radio2:checked ~ .navigation label[for="radio2"],
+#radio3:checked ~ .navigation label[for="radio3"]{
+    background-color: #00A896;
+}
