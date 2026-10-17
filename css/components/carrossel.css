@@ -73,3 +73,9 @@
 #radio3:checked ~ .navigation label[for="radio3"]{
     background-color: #00A896;
 }
+
+@media (max-width: 830px) {
+    .carrossel {
+        display: none;
+    }
+}

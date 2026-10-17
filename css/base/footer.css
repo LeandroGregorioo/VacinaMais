@@ -1,0 +1,109 @@
+.footer {
+    background-color: #0B3D3A; 
+    color: #E5E7EB;
+    padding: 60px 0 20px 0;
+    margin-top: 80px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-content {
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Coluna da Marca (Esquerda) */
+.footer-brand {
+    flex: 2; /* Faz esta coluna ocupar um pouco mais de espaço */
+    min-width: 280px;
+}
+
+.footer-logo {
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #9CA3AF;
+    max-width: 320px;
+    margin: 0;
+}
+
+/* Colunas de Links e Contato */
+.footer-links, 
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer h4 {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Estilo dos Links */
+.footer-links a {
+    color: #9CA3AF;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s, transform 0.2s;
+    width: fit-content;
+}
+
+.footer-links a:hover {
+    color: #00A896; /* Verde da sua marca ao passar o mouse */
+    transform: translateX(4px); /* Animação sutil para a direita */
+}
+
+/* Estilo dos Contatos */
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #9CA3AF;
+    margin: 0;
+}
+
+.footer-contact .material-symbols-outlined {
+    font-size: 20px;
+    color: #00A896; /* Ícones em verde para dar um charme */
+}
+
+/* Base do Footer (Copyright) */
+.footer-bottom {
+    max-width: 1100px;
+    width: 90%;
+    margin: 50px auto 0 auto;
+    padding-top: 24px;
+    border-top: 1px solid #374151; /* Linha divisória bem sutil */
+    text-align: center;
+    font-size: 13px;
+    color: #6B7280;
+}
+
+/* =======================================
+   RESPONSIVIDADE DO FOOTER
+   ======================================= */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .footer-brand, .footer-links, .footer-contact {
+        min-width: 100%;
+    }
+}

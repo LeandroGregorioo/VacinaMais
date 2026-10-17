@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Arquivos CSS-->  
-    <link rel="stylesheet" href="../css/homestyle.css">
-    <link rel="stylesheet" href="../css/ai_assistent_style.css">
-    <link rel="stylesheet" href="../css/carrossel.css">
+    <link rel="stylesheet" href="../css/pages/homestyle.css">
+    <link rel="stylesheet" href="../css/components/ai_assistent_style.css">
+    <link rel="stylesheet" href="../css/components/carrossel.css">
+    <link rel="stylesheet" href="../css/base/header.css">
+    <link rel="stylesheet" href="../css/base/footer.css">
     <!--icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
@@ -14,10 +16,71 @@
 </head>
 <body>
 
-    <!--Cabeçalho-->
+<!--Cabeçalho-->
     <header class="containerHeader">
-        <img class="logoHeader" src="../image/logo.svg" alt="Logo do sistema VacinaMais">
+        <div class="header-content">
+            
+            <!-- Logo Original -->
+            <a href="#inicio" class="header-brand">
+                <img class="logoHeader" src="../image/logo.svg" alt="Logo do sistema VacinaMais">
+            </a>
+
+            <!-- Navegação principal (Desktop) -->
+            <nav class="header-nav">
+                <a class="header-link header-link-active" href="#inicio">
+                    <span class="material-symbols-outlined">home</span> Início
+                </a>
+                <a class="header-link" href="#minhas-vacinas">
+                    <span class="material-symbols-outlined">vaccines</span> Minhas Vacinas
+                </a>
+                <a class="header-link" href="#lembretes">
+                    <span class="material-symbols-outlined">calendar_month</span> Calendário
+                </a>
+                <a class="header-link" href="#campanhas">
+                    <span class="material-symbols-outlined">info</span> Informações
+                </a>
+                <a class="header-link" href="https://www.google.com/maps/search/?api=1&query=unidade+basica+de+saude" target="_blank">
+                    <span class="material-symbols-outlined">location_on</span> Unidades de Saúde
+                </a>
+            </nav>
+
+            <!-- Ações (Perfil e Menu Mobile) -->
+            <div class="header-actions">
+                
+                <!-- Menu para Celular (Hamburguer) -->
+                <details class="header-mobile-menu">
+                    <summary aria-label="Abrir menu">
+                        <span class="material-symbols-outlined">menu</span>
+                    </summary>
+                    <nav class="header-mobile-links">
+                        <a href="#inicio">Início</a>
+                        <a href="#minhas-vacinas">Minhas Vacinas</a>
+                        <a href="#lembretes">Calendário</a>
+                        <a href="#campanhas">Informações</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=unidade+basica+de+saude" target="_blank">Unidades de Saúde</a>
+                    </nav>
+                </details>
+
+                <!-- Perfil do Usuário -->
+                <details class="header-profile">
+                    <summary aria-label="Abrir opções do perfil">
+                        <div class="header-avatar">
+                            <span class="material-symbols-outlined">person</span>
+                        </div>
+                        <span class="header-user-name">João</span>
+                        <span class="material-symbols-outlined chevron">expand_more</span>
+                    </summary>
+                    <div class="header-profile-dropdown">
+                        <span class="header-profile-label">Minha conta</span>
+                        <a href="#minhas-vacinas">Minha carteira</a>
+                        <a href="#form-vacina">Adicionar vacina</a>
+                    </div>
+                </details>
+
+            </div>
+        </div>
     </header>
+
    <br>
    <!-- Carrosel com imagens de propagandas da saude-->
    <section class="carrossel">
@@ -26,13 +89,13 @@
        <input type="radio" name="radio-bnt" id="radio3">
        <div class="slides">
             <div class="slide first">
-                <img src="../image/carrossel/ministério-da-saúde.png" class="img_carrossel" >
+                <img src="../image/carrossel/gab.png" class="img_carrossel" >
             </div>
             <div class="slide">
-                <img src="../image/carrossel/Peca-Joilma-Oliveira-Campanha-MS-.webp" class="img_carrossel" >
+                <img src="../image/carrossel/gripe.png" class="img_carrossel" >
             </div>
             <div class="slide">
-                <img src="../image/carrossel/unnamed-1.jpg" class="img_carrossel">
+                <img src="../image/carrossel/turbe.png" class="img_carrossel">
             </div>
         </div>
         <div class="navigation">
@@ -52,34 +115,226 @@
                 <p>A sua carteira de vacinação</p>
             </section>
             
+            <section class="resumo-dashboard">
+                
+                <!-- Card Verde: Vacinas Registradas -->
+                <div class="card-dashboard card-verde">
+                    <h3 class="titulo-card">Vacinas registradas</h3>
+                    <div class="conteudo-card">
+                        <div class="icone-card-branco formato-circulo">
+                            <span class="material-symbols-outlined">shield</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="numero-destaque" id="total-vacinas">6</span>
+                            <span class="texto-secundario">doses registradas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Azul: Próxima Dose -->
+                <div class="card-dashboard card-azul">
+                    <h3 class="titulo-card">Próxima dose</h3>
+                    <div class="conteudo-card">
+                        <div class="icone-card-branco formato-quadrado">
+                            <span class="material-symbols-outlined">calendar_month</span>
+                        </div>
+                        <div class="info-card">
+                            <span class="data-destaque" id="proxima-data">15/07/2024</span>
+                            <span class="texto-secundario" id="proxima-vacina">Hepatite B - 3ª dose</span>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="minhasVacinas">
+                <div class="cabecalho-tabela">
+                    <div class="titulo-coluna">Vacina</div>
+                    <div class="titulo-coluna">Dose</div>
+                    <div class="titulo-coluna">Data de aplicação</div>
+                    <div class="titulo-coluna">Local de vacinação</div>
+                    <div class="titulo-coluna"></div>
+                </div>
+
+                <!-- Container onde o JS injeta as linhas -->
+                <div id="listadeVacinas" class="corpo-tabela"></div>
+            </section>
+        </div>
+
+<!-- COLUNA DA DIREITA -->
+        <div class="coluna-direita">      
+            
+            <!-- Formulário de Adicionar Vacina -->
             <section class="adicionar-vacina">
-                <h2>Registrar Nova Vacina</h2>
-                <form>
-                    <input type="text" id="nome-vacina" placeholder="Nome da Vacina (Ex: Tétano)">
-                    <input type="date" id="data-vacina">
-                    <select id="status-vacina">
-                        <option value="Em dia">Em dia</option>
-                        <option value="Atrasada">Atrasada</option>
-                        <option value="Reforço pendente">Reforço pendente</option>
-                    </select>
-                    <button type="button" onclick="adicionarVacina()">Salvar Vacina</button>
+                <div class="cabecalho-card">
+                    <h2>Adicionar vacina</h2>
+                    <div class="icone-circular-verde">
+                        <span class="material-symbols-outlined">vaccines</span>
+                    </div>
+                </div>
+
+                <form id="form-vacina">
+                    <div class="grupo-input">
+                        <label>Nome da vacina</label>
+                        <input type="text" id="nome-vacina" placeholder="Ex.: Hepatite B">
+                    </div>
+                   <div class="grupo-input">
+                        <label>Dose</label>
+                        <select id="dose-vacina">
+                            <!-- Opções padrões -->
+                            <option value="Dose única" selected>Dose única</option>
+                            <option value="Reforço">Reforço</option>
+                            <option value="1º Reforço">1º Reforço</option>
+                            <option value="2º Reforço">2º Reforço</option>
+                            <!-- 1 até 10 doses -->
+                            <option value="1ª dose">1ª dose</option>
+                            <option value="2ª dose">2ª dose</option>
+                            <option value="3ª dose">3ª dose</option>
+                            <option value="4ª dose">4ª dose</option>
+                            <option value="5ª dose">5ª dose</option>
+                            <option value="6ª dose">6ª dose</option>
+                            <option value="7ª dose">7ª dose</option>
+                            <option value="8ª dose">8ª dose</option>
+                            <option value="9ª dose">9ª dose</option>
+                            <option value="10ª dose">10ª dose</option>
+                        </select>
+                    </div>
+                    <div class="grupo-input">
+                        <label>Data de aplicação</label>
+                        <input type="date" id="data-vacina">
+                    </div>
+                    <div class="grupo-input">
+                        <label>Local de vacinação</label>
+                        <input type="text" id="local-vacina" placeholder="Ex.: UBS Central">
+                    </div>
+                    <div class="grupo-input">
+                        <label>Observações</label>
+                        <textarea id="obs-vacina" rows="3" placeholder="Informações adicionais (opcional)"></textarea>
+                    </div>
+                    
+                    <button type="button" onclick="adicionarVacina()">
+                        <span class="material-symbols-outlined">health_and_safety</span> Salvar registro
+                    </button>
                 </form>
             </section>
 
-        </div>
-
-        <!-- COLUNA DA DIREITA (Lista de vacinas) -->
-        <div class="coluna-direita">
-            <section class="minhasVacinas">
-                <h2>Minha Carteira</h2>
-                <div id="listadeVacinas"></div>
+            <!-- NOVO: Seção de Lembretes -->
+            <section class="lembretes-card">
+                <div class="cabecalho-card">
+                    <h2>Lembretes</h2>
+                    <div class="icone-circular-verde">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </div>
+                </div>
+                
+                <!-- Container onde o JS injeta os lembretes -->
+                <div id="lista-lembretes" class="conteudo-lembretes"></div>
+                
+                <a href="#" class="link-todos-lembretes">
+                    Ver todos os lembretes <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
             </section>
+
         </div>
 
     </main>
 
-    <footer class="footer">
+    <!-- CARDS INFORMATIVOS (NO FUNDO DA PÁGINA) -->
+    <section class="cards-informativos">
 
+        <!-- ENCONTRE UMA UBS -->
+        <article class="card-info card-ubs">
+            <div class="card-info-conteudo">
+                <div class="card-info-icone">
+                    <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <h3>Encontre uma<br>Unidade de Saúde</h3>
+                <p>Veja a UBS mais próxima de você.</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Unidade+Basica+de+Saude" target="_blank" rel="noopener noreferrer" class="card-info-botao">
+                    Buscar unidades
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+            <img src="../image/imagens para div/posto.png" alt="Ilustração de uma unidade de saúde" class="card-info-imagem">
+        </article>
+
+        <!-- DÚVIDAS SOBRE VACINAS -->
+        <article class="card-info card-duvidas">
+            <div class="card-info-conteudo">
+                <div class="card-info-icone">
+                    <span class="material-symbols-outlined">menu_book</span>
+                </div>
+                <h3>Dúvidas sobre vacinas?</h3>
+                <p>Tire suas dúvidas e conheça mais sobre cada imunizante.</p>
+                <a href="https://www.gov.br/saude/pt-br" target="_blank" rel="noopener noreferrer" class="card-info-botao">
+                    Ver informações
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+            <img src="../image/imagens para div/inf.png" alt="Livro ilustrado com informações sobre vacinação" class="card-info-imagem">
+        </article>
+
+        <!-- PROTEJA SUA FAMÍLIA -->
+        <article class="card-info card-familia">
+            <div class="card-info-conteudo">
+                <div class="card-info-icone">
+                    <span class="material-symbols-outlined">family_restroom</span>
+                </div>
+                <h3>Mantenha sua família protegida</h3>
+                <p>A vacinação é um ato de cuidado para todos.</p>
+                <a href="#form-vacina" class="card-info-botao">
+                    Saiba mais
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </a>
+            </div>
+            <img src="../image/imagens para div/familia.png" alt="Ilustração de uma família protegida" class="card-info-imagem">
+        </article>
+
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            
+            <!-- Coluna 1: Marca e Descrição -->
+            <div class="footer-brand">
+                <img src="../image/logo.svg" alt="Logo VacinaMais" class="footer-logo">
+                <p>Mantenha sua saúde em dia com o registro digital, rápido e seguro de todas as suas vacinas e lembretes.</p>
+            </div>
+            
+            <!-- Coluna 2: Navegação Rápida -->
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <a href="#inicio">Início</a>
+                <a href="#minhas-vacinas">Minhas Vacinas</a>
+                <a href="#lembretes">Calendário</a>
+                <a href="#campanhas">Informações de Saúde</a>
+            </div>
+            
+            <!-- Coluna 3: Contato e Ajuda -->
+            <div class="footer-contact">
+                <h4>Atendimento</h4>
+                <p>
+                    <span class="material-symbols-outlined">mail</span> 
+                    suporte@vacinamais.com.br
+                </p>
+                <p>
+                    <span class="material-symbols-outlined">call</span> 
+                    0800 123 4567
+                </p>
+                <p>
+                    <span class="material-symbols-outlined">location_on</span> 
+                    Encontre uma UBS
+                </p>
+            </div>
+            
+        </div>
+        
+        <!-- Direitos Autorais (Bottom) -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 VacinaMais. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <!--Assistente de AI-->
@@ -112,7 +367,7 @@
             </div>
         </section>
     </section>
-
+    
     <!--Arquivos Javascript-->
     <script src="../script/script.js"></script>
     <script src="../script/ai-button.js"></script>

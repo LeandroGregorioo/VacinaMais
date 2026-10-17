@@ -168,3 +168,9 @@
 .send-text-ai button:active {
     transform: scale(0.95); /* da um efeito de pulo ao clicar */
 }
+
+@media (max-width: 1000px) {
+    .container-ai{
+        width: 280px;
+    }
+}
