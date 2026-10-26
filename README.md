@@ -141,25 +141,15 @@ Como o projeto utiliza exclusivamente tecnologias nativas da web, não é necess
 
 ---
 
-## ⏱️ 7. Roteiro Sugerido de Apresentação (5 a 8 minutos)
+## 👥 7. Equipe do Projeto
 
-| Tempo | Etapa | Descrição |
-| :---: | :--- | :--- |
-| **0:00 - 1:30** | **1. Contexto e Nicho** | Apresentar os integrantes, contextualizar a dor do controle vacinal em papel e a proposta do VacinaMais. |
-| **1:30 - 4:30** | **2. Demonstração Prática (Ao Vivo)** | - Entrar no link em produção.<br>- Fazer login com o CPF formatado.<br>- Mostrar o Dashboard e a lista inicial de vacinas.<br>- Cadastrar uma nova vacina e provar a atualização dinâmica na tabela e no card de contagem total. |
-| **4:30 - 6:00** | **3. Qualidade Técnica do Código** | Destacar o HTML5 semântico, o uso estruturado de Flexbox no CSS e a manipulação dinâmica do DOM em Vanilla JS (sem frameworks). |
-| **6:00 - 7:00** | **4. Conclusão & Perguntas** | Finalizar destacando a responsividade, diferenciais do projeto e abrir para considerações do avaliador. |
+| Nome Completo | RGM / Matrícula | Responsabilidade Principal |
 
----
-
-## 👥 8. Equipe do Projeto
-
-| Nome Completo | RA / Matrícula | Responsabilidade Principal |
-| :--- | :---: | :--- |
-| **Nome do Aluno 1** | 0000000 | Estrutura HTML Semântico & Layout Flexbox |
-| **Nome do Aluno 2** | 0000000 | Lógica JavaScript & Manipulação de Estado |
-| **Nome do Aluno 3** | 0000000 | Componentes (Carrossel, IA, Validações) |
-| **Nome do Aluno 4** | 0000000 | Deploy, Documentação e Responsividade |
+| **Leandro De Souza Gregório** | 37724975 | Estrutura HTML Semântico & Layout Flexbox |
+| **Ruan Pablo Poli Gomes** | 48908983 | Lógica JavaScript & Manipulação de Estado |
+| **Erik Dias de Oliveira** | 48332551 | Componentes (Carrossel, IA, Validações) |
+| **Arthur Osugi** | 49631888 | Deploy, Documentação e Responsividade |
+| **Michel Zaghi Barreiros** | 49989570 | Estrutura HTML Semântico & Layout Flexbox |
 
 ---
 
