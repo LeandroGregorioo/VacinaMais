@@ -17,15 +17,9 @@ function fazerLogin() {
     const cpfDigitado = document.getElementById("cpf").value;
 
     if (cpfDigitado === "000.000.000-00") {
-
-        console.log(cpfDigitado);
-
         window.location.href = "home.html";
-
     } else {
-
         alert("CPF Inválido");
-
     }
 }
 

@@ -59,7 +59,6 @@
 }
 
 /* Base comum para os dois cartões */
-/* Base comum para os dois cartões */
 .card-dashboard {
     flex: 1; 
     padding: 16px 20px; 
@@ -69,58 +68,29 @@
     gap: 16px; 
     position: relative; 
     overflow: hidden; 
-    
-    /* NOVA SOMBRA: Suave, difusa e moderna */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-    
-    /* Transição para caso queira adicionar um efeito ao passar o rato (hover) mais tarde */
-    transition: box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.icone-card-branco {
-    background-color: #FFFFFF;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    /* SOMBRA DO ÍCONE: Ligeiramente mais definida para destacar o elemento do fundo colorido */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+.card-dashboard:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
 }
 
-/* CORES EXATAS DO CARD VERDE */
+/* CORES DO CARD VERDE */
 .card-verde {
     background-color: #EEF7ED; 
-    /* Adiciona a borda verde bem clarinha e fina */
     border: 1px solid #D6E8D5; 
-}
-/* ... resto do CSS do card-verde se mantém ... */
-
-/* CORES EXATAS DO CARD AZUL */
-.card-azul {
-    background-color: #F0F5FC; 
-    /* Adiciona a borda azul bem clarinha e fina */
-    border: 1px solid #D9E5F6; 
-}
-/* ... resto do CSS do card-azul se mantém ... */
-
-/* =======================================
-   CORES EXATAS DO CARD VERDE
-   ======================================= */
-.card-verde {
-    background-color: #EEF7ED; /* Verde clarinho do fundo */
 }
 .card-verde .titulo-card { color: #2E7D32; } 
 .card-verde .numero-destaque { color: #1B5E20; }
 .card-verde .texto-secundario { color: #64A367; }
 .card-verde .material-symbols-outlined { color: #1B5E20; }
 
-/* =======================================
-   CORES EXATAS DO CARD AZUL
-   ======================================= */
+/* CORES DO CARD AZUL */
 .card-azul {
-    background-color: #F0F5FC; /* Azul clarinho do fundo */
+    background-color: #F0F5FC; 
+    border: 1px solid #D9E5F6; 
 }
 .card-azul .titulo-card { color: #3B82F6; }
 .card-azul .data-destaque { color: #2563EB; }
@@ -150,7 +120,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.06); /* Sombreado bem leve só no fundo do ícone */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
 }
 
 .formato-circulo { border-radius: 50%; }
@@ -177,22 +147,6 @@
 .texto-secundario {
     font-size: 13px;
     font-weight: 500;
-}
-
-/* Efeito de elevação ao passar o mouse  */
-.card-dashboard:hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
-    transform: translateY(-2px);
-}
-
-/* =======================================
-   RESPONSIVIDADE DOS CARDS (MOBILE)
-   ======================================= */
-@media (max-width: 768px) {
-    .resumo-dashboard {
-        flex-direction: column; /* Coloca um cartão em cima do outro no celular */
-        gap: 15px;
-    }
 }
 
 
@@ -407,21 +361,15 @@
         margin-top: 10px;
         justify-content: flex-end;
     }
-}
-/* =======================================
-   RESPONSIVIDADE DOS CARDS (MOBILE)
-   ======================================= */
-@media (max-width: 1000px) {
+
     .resumo-dashboard {
-        flex-direction: column; /* Coloca um cartão em cima do outro no celular */
+        flex-direction: column;
         gap: 15px;
     }
 }
 
-
-
 /* =======================================
-   COLUNA DA DIREITA (FORMULÁRIO E LEMBRETES)
+   COLUNA DA DIREITA (FORMULÁRIO)
    ======================================= */
 
 .coluna-direita {
@@ -433,7 +381,7 @@
 }
 
 /* Base visual dos cards da direita */
-.adicionar-vacina, .lembretes-card {
+.adicionar-vacina {
     background-color: #F9FAFB;
     border: 1px solid #F3F4F6;
     padding: 24px;
@@ -521,76 +469,6 @@
 .adicionar-vacina button:hover {
     background-color: #3a7d5b;
 }
-
-/* =======================================
-   ESTILOS DOS LEMBRETES
-   ======================================= */
-.conteudo-lembretes {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.item-lembrete {
-    display: flex;
-    gap: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid #E5E7EB;
-}
-
-.item-lembrete:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-/* Ícone de calendário azul ao lado do lembrete */
-.icone-lembrete {
-    background-color: #edf3fa;
-    color: #3b82f6;
-    padding: 10px;
-    width: 20px;
-    height: 20px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.info-lembrete { flex: 1; }
-
-.cabecalho-info-lembrete {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 4px;
-}
-
-.data-lembrete {
-    color: #3b82f6;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.desc-lembrete {
-    color: #6b7280;
-    font-size: 14px;
-    margin: 0;
-}
-
-.link-todos-lembretes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: #3b82f6;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: 24px;
-}
-
-.link-todos-lembretes:hover { text-decoration: none; }
-
 
 /* ========================================
    CARDS INFORMATIVOS (RODAPÉ DO CONTEÚDO)

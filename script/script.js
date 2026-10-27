@@ -10,11 +10,6 @@ const vacinas = [
     { nome: "Influenza", dose: "Dose única", data: "05/04/2024", local: "UBS Central", status: "Em Dia" }
 ];
 
-const lembretesMock = [
-    { id: 1, data: "15/07/2024", descricao: "Hepatite B - 3ª dose", status: "Em breve" },
-    { id: 2, data: "05/04/2025", descricao: "Influenza - próxima dose", status: "Futuro" }
-];
-
 // ==========================================
 // FUNÇÕES DE RENDERIZAÇÃO
 // ==========================================
@@ -82,40 +77,6 @@ const renderizarVacinas = () => {
     atualizarDashboard();
 };
 
-// Função que desenha os lembretes na tela
-const renderizarLembretes = () => {
-    const divLembretes = document.getElementById("lista-lembretes");
-    
-    if (!divLembretes) return;
-
-    divLembretes.innerHTML = "";
-
-    lembretesMock.forEach((lembrete) => {
-        let classeBadge = "badge-padrao";
-        
-        if (lembrete.status === "Em breve") {
-            classeBadge = "badge-azul";
-        } else if (lembrete.status === "Futuro") {
-            classeBadge = "badge-verde";
-        }
-
-        divLembretes.innerHTML += `
-            <div class="item-lembrete">
-                <div class="icone-lembrete">
-                    <span class="material-symbols-outlined">calendar_month</span>
-                </div>
-                <div class="info-lembrete">
-                    <div class="cabecalho-info-lembrete">
-                        <span class="data-lembrete">${lembrete.data}</span>
-                        <span class="badge ${classeBadge}">${lembrete.status}</span>
-                    </div>
-                    <p class="desc-lembrete">${lembrete.descricao}</p>
-                </div>
-            </div>
-        `;
-    });
-};
-
 // ==========================================
 // FUNÇÕES DE LÓGICA E INTERAÇÃO
 // ==========================================
@@ -178,4 +139,3 @@ const adicionarVacina = () => {
 // INICIALIZAÇÃO (Corre ao carregar a página)
 // ==========================================
 renderizarVacinas();
-renderizarLembretes();

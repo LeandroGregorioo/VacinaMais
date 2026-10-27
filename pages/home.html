@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Arquivos CSS-->  
     <link rel="stylesheet" href="../css/pages/homestyle.css">
-    <link rel="stylesheet" href="../css/components/ai_assistent_style.css">
     <link rel="stylesheet" href="../css/components/carrossel.css">
     <link rel="stylesheet" href="../css/base/header.css">
     <link rel="stylesheet" href="../css/base/footer.css">
@@ -17,74 +16,49 @@
 <body>
 
 <!--Cabeçalho-->
-    <header class="containerHeader">
+    <header class="containerHeader" id="inicio">
         <div class="header-content">
             
             <!-- Logo Original -->
-            <a href="#inicio" class="header-brand">
+            <a href="#" class="header-brand">
                 <img class="logoHeader" src="../image/logo.svg" alt="Logo do sistema VacinaMais">
             </a>
 
             <!-- Navegação principal (Desktop) -->
             <nav class="header-nav">
-                <a class="header-link header-link-active" href="#inicio">
+                <a class="header-link header-link-active" href="#">
                     <span class="material-symbols-outlined">home</span> Início
                 </a>
-                <a class="header-link" href="#minhas-vacinas">
-                    <span class="material-symbols-outlined">vaccines</span> Minhas Vacinas
-                </a>
-                <a class="header-link" href="#lembretes">
-                    <span class="material-symbols-outlined">calendar_month</span> Calendário
-                </a>
-                <a class="header-link" href="#campanhas">
-                    <span class="material-symbols-outlined">info</span> Informações
-                </a>
+        
                 <a class="header-link" href="https://www.google.com/maps/search/?api=1&query=unidade+basica+de+saude" target="_blank">
                     <span class="material-symbols-outlined">location_on</span> Unidades de Saúde
                 </a>
             </nav>
 
-            <!-- Ações (Perfil e Menu Mobile) -->
-            <div class="header-actions">
-                
-                <!-- Menu para Celular (Hamburguer) -->
-                <details class="header-mobile-menu">
-                    <summary aria-label="Abrir menu">
-                        <span class="material-symbols-outlined">menu</span>
-                    </summary>
-                    <nav class="header-mobile-links">
-                        <a href="#inicio">Início</a>
-                        <a href="#minhas-vacinas">Minhas Vacinas</a>
-                        <a href="#lembretes">Calendário</a>
-                        <a href="#campanhas">Informações</a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=unidade+basica+de+saude" target="_blank">Unidades de Saúde</a>
-                    </nav>
-                </details>
-
-                <!-- Perfil do Usuário -->
-                <details class="header-profile">
-                    <summary aria-label="Abrir opções do perfil">
-                        <div class="header-avatar">
-                            <span class="material-symbols-outlined">person</span>
-                        </div>
-                        <span class="header-user-name">João</span>
-                        <span class="material-symbols-outlined chevron">expand_more</span>
-                    </summary>
-                    <div class="header-profile-dropdown">
-                        <span class="header-profile-label">Minha conta</span>
-                        <a href="#minhas-vacinas">Minha carteira</a>
-                        <a href="#form-vacina">Adicionar vacina</a>
+     
+            <!-- Perfil do Usuário -->
+            <details class="header-profile">
+                <summary aria-label="Abrir opções do perfil">
+                    <div class="header-avatar">
+                        <span class="material-symbols-outlined">person</span>
                     </div>
-                </details>
+                    <span class="header-user-name">João</span>
+                    <span class="material-symbols-outlined chevron">expand_more</span>
+                </summary>
+                <div class="header-profile-dropdown">
+                    <span class="header-profile-label">Minha conta</span>
+                    <a href="#minhas-vacinas">Minha carteira</a>
+                    <a href="#form-vacina">Adicionar vacina</a>
+                </div>
+            </details>
 
-            </div>
         </div>
     </header>
 
    <br>
    <!-- Carrosel com imagens de propagandas da saude-->
    <section class="carrossel">
-       <input type="radio" name="radio-bnt" id="radio1">
+       <input type="radio" name="radio-bnt" id="radio1" checked>
        <input type="radio" name="radio-bnt" id="radio2">
        <input type="radio" name="radio-bnt" id="radio3">
        <div class="slides">
@@ -107,7 +81,7 @@
     <!--Conteudo-->
     <main class="containerMain">
 
-        <!-- COLUNA DA ESQUERDA (Bem-vindo + Formulário) -->
+        <!-- COLUNA DA ESQUERDA (Bem-vindo + Dashboard + Minhas Vacinas) -->
         <div class="coluna-esquerda">
             
             <section class="userInfo">
@@ -147,7 +121,7 @@
 
             </section>
 
-            <section class="minhasVacinas">
+            <section class="minhasVacinas" id="minhas-vacinas">
                 <div class="cabecalho-tabela">
                     <div class="titulo-coluna">Vacina</div>
                     <div class="titulo-coluna">Dose</div>
@@ -218,29 +192,12 @@
                 </form>
             </section>
 
-            <!-- NOVO: Seção de Lembretes -->
-            <section class="lembretes-card">
-                <div class="cabecalho-card">
-                    <h2>Lembretes</h2>
-                    <div class="icone-circular-verde">
-                        <span class="material-symbols-outlined">notifications</span>
-                    </div>
-                </div>
-                
-                <!-- Container onde o JS injeta os lembretes -->
-                <div id="lista-lembretes" class="conteudo-lembretes"></div>
-                
-                <a href="#" class="link-todos-lembretes">
-                    Ver todos os lembretes <span class="material-symbols-outlined">arrow_forward</span>
-                </a>
-            </section>
-
         </div>
 
     </main>
 
     <!-- CARDS INFORMATIVOS (NO FUNDO DA PÁGINA) -->
-    <section class="cards-informativos">
+    <section class="cards-informativos" id="informacoes">
 
         <!-- ENCONTRE UMA UBS -->
         <article class="card-info card-ubs">
@@ -300,7 +257,7 @@
             <!-- Coluna 1: Marca e Descrição -->
             <div class="footer-brand">
                 <img src="../image/logo.svg" alt="Logo VacinaMais" class="footer-logo">
-                <p>Mantenha sua saúde em dia com o registro digital, rápido e seguro de todas as suas vacinas e lembretes.</p>
+                <p>Mantenha sua saúde em dia com o registro digital, rápido e seguro de todas as suas vacinas.</p>
             </div>
             
             <!-- Coluna 2: Navegação Rápida -->
@@ -308,8 +265,8 @@
                 <h4>Navegação</h4>
                 <a href="#inicio">Início</a>
                 <a href="#minhas-vacinas">Minhas Vacinas</a>
-                <a href="#lembretes">Calendário</a>
-                <a href="#campanhas">Informações de Saúde</a>
+                <a href="#form-vacina">Adicionar Vacina</a>
+                <a href="#informacoes">Informações de Saúde</a>
             </div>
             
             <!-- Coluna 3: Contato e Ajuda -->
@@ -336,41 +293,9 @@
             <p>&copy; 2026 VacinaMais. Todos os direitos reservados.</p>
         </div>
     </footer>
-
-    <!--Assistente de AI-->
-    <section class="ai-assist">
-        <button id="on-ai" value="1" onclick="aiContainer()">
-            <span class="material-symbols-outlined">robot_2</span>
-        </button> 
-        <section class="container-ai">
-            <div class="header-ai" >
-                <div class="perfil-ai">
-                    <div class="avatar-ai">
-                        <img src="../image/robo.jpg" alt="Avatar da IA">
-                    </div>
-                    <div class="info-ai">
-                        <h4>Assistente VacinaMais</h4>
-                        <span class="status-online">
-                            <span class="bolinha-verde"></span> Online
-                        </span>
-                    </div>
-                </div>
-                <button id="off-ai" onclick="aiContainer()">
-                    <span class="material-symbols-outlined">close_small</span>
-                </button>
-                
-            </div>
-            <div class="content-ai"></div>
-            <div class="send-text-ai">
-                <textarea name="" id=""></textarea>
-                <button class=""><span class="material-symbols-outlined">send</span></button>
-            </div>
-        </section>
-    </section>
-    
+  
     <!--Arquivos Javascript-->
     <script src="../script/script.js"></script>
-    <script src="../script/ai-button.js"></script>
     <script src="../script/carrossel.js"></script>
 </body>
 </html>

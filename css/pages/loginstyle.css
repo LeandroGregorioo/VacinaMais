@@ -54,20 +54,19 @@ button{
     font-weight: bold;
     cursor: pointer;
 }
-/*Animação do botão quando passar o mouse por cima muda de*/
+/* Efeito hover no botão */
 button:hover {
     background-color: #008f7f;
 }
 
 .cpf{
-    border-radius: 10%;
     width: 200px;
-    display: flex; 
+    padding: 10px 14px;
     text-align: center;
-    cursor: pointer;
     border: 1px solid #ccc;
     border-radius: 25px; 
     outline: none;
+    font-size: 14px;
 }
 
 .cpf:focus{
